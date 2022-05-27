@@ -54,7 +54,7 @@ if (userName == undefined) {
 			resolve(date)
 	}	,6000)
 })
-   
+
 	
 	
 	
@@ -88,12 +88,23 @@ if (userName == undefined) {
 
 	}
 	)
-	    timeStart.then(date => console.log(date))
-        timeEnd.then(date => console.log(date))
+	    timeStart.then(date => {
+		    const time = document.createElement('p');
+		    time.textContent = date
+		    document.body.append(time);
+	   })
+
+
+	    timeEnd.then(date => {
+		    const time = document.createElement('p');
+		    time.textContent = date
+		    document.body.append(time);
+	   })  
 	    .catch(err => console.log(err))
 
 	window.onload = function() {
 		document.querySelector('.preloader').classList.add("preloader-remove");
 	};	
 	
+ 
 
